@@ -107,7 +107,7 @@ header {
 }
 
 #upload-zone.highlight #upload-zone-ring text {
-  /* fill: rgba(0,0,0,0.1); */
+  fill: rgba(0,0,0,0.1);
 }
 
 #fileElem {
@@ -148,4 +148,16 @@ header {
   padding: 60px 120px 0 120px;
   text-align: center;
   font-size: 14px;
+}
+
+#canvas-container {
+  height: 500px;
+  width: 500px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 102;
+  pointer-events: none;
+  border-radius: 250px;
+  overflow: hidden;
 }
