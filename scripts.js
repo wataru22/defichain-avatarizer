@@ -1,5 +1,6 @@
 // ************************ Drag and drop ***************** //
 let dropArea = document.getElementById("upload-zone")
+let root = document.getElementById("root")
 
 // Prevent default drag behaviors
 ;['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
@@ -45,6 +46,17 @@ function handleFiles(files) {
 //   files.forEach(previewFile)
 }
 
+function stepChange(step) {
+  root.classList.remove('current-step-1')
+  root.classList.remove('current-step-2')
+  root.classList.remove('current-step-3')
+  root.classList.add('current-step-'+step)
+  if (step===1) {
+    canvas.clear();
+    dropArea.classList.remove('highlight')
+  }
+}
+
 // function previewFile(file) {
 //   let reader = new FileReader()
 //   reader.readAsDataURL(file)
@@ -64,6 +76,12 @@ var svg = '<svg xmlns="http://www.w3.org/2000/svg" height="480pt" id="logo" pres
 var canvas = new fabric.StaticCanvas('canvas');
 
 function loadCanvas(file) {
+
+  if (!file) return
+
+  dropArea.classList.add('loaded')
+  stepChange(2)
+
   var reader = new FileReader();
  
   reader.onload = function (f) {
@@ -109,7 +127,19 @@ document.getElementById('fileElem').addEventListener("change", function (e) {
   loadCanvas(file);
 });
 
-document.getElementById('download').addEventListener("click", function (e) {
+document.getElementById('select-btn').addEventListener("click", function (e) {
+  stepChange(3)
+});
+
+document.getElementById('back-btn-1').addEventListener("click", function (e) {
+  stepChange(1)
+});
+
+document.getElementById('back-btn-2').addEventListener("click", function (e) {
+  stepChange(2)
+});
+
+document.getElementById('download-btn').addEventListener("click", function (e) {
   var dataURL = canvas.toDataURL({format: 'png', quality: 0.8});
   // this can be used to download any image from webpage to local disk
   var xhr = new XMLHttpRequest();
