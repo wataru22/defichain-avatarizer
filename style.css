@@ -1,0 +1,151 @@
+/*style.css*/
+
+html, body {
+  font-family: 'IBM Plex Sans', sans-serif;
+}
+
+#root {
+  margin: 0 auto;
+  max-width: 1280px;
+  position: relative;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  height: 96px;
+  border-bottom: solid 4px #999;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+#brand-logo {
+  color: #ff00af;
+  max-width: 92px;
+}
+
+#brand-logo svg {
+  width: 100%;
+  height: 100%;
+}
+
+#steps {
+  display: flex;
+  align-items: center;
+}
+
+#steps .step {
+  padding: 0 8px;
+}
+
+#steps .step.current {
+  color: #ff00af;
+  font-weight: 600;
+}
+
+.step.step-1-2,
+.step.step-2-3 {
+  display: inline-block;
+  height: 2px;
+  width: 30px;
+  background-color: rgba(0,0,0,0.1);
+}
+
+#steps-container {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+#step1 {
+  display: flex;
+  align-items: center;
+  position: relative;
+  justify-content: space-between;
+  padding-top: 80px;
+  width: 100%;
+}
+
+#step1-title {
+  display: inline-block;
+  font-size: 100px;
+  font-weight: 700;
+  line-height: 1;
+  margin: 0;
+  text-align: right;
+  width: 460px;
+}
+#step1-title .outline-pink {
+  color: #ff00af;
+}
+@supports (-webkit-text-stroke: 1px black) {
+  #step1-title .outline-pink {
+    -webkit-text-stroke: 4px #ff00af;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+#upload-zone {
+  height: 500px;
+  width: 500px;
+  position: relative;
+  transform: scale(1.3);
+}
+
+#upload-zone svg {
+  overflow: visible;
+}
+
+#upload-zone-ring text {
+  font-size: 51px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: -8px;
+  fill: #ff00af;
+  transition: fill ease-in-out 300ms;
+}
+
+#upload-zone.highlight #upload-zone-ring text {
+  /* fill: rgba(0,0,0,0.1); */
+}
+
+#fileElem {
+  display: none;
+}
+
+#upload-plus {
+  width:200px;
+  height:200px;
+  position : absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -100px;
+  margin-left: -100px;
+  z-index: 101;
+}
+
+.plus {
+  display:inline-block;
+  width:200px;
+  height:200px;
+  
+  background:
+    linear-gradient(#ff00af,#ff00af),
+    linear-gradient(#ff00af,#ff00af);
+  background-position:center;
+  background-size: 50% 2px,2px 50%; /*thickness = 2px, length = 50% (25px)*/
+  background-repeat:no-repeat;
+}
+
+#upload-text {
+  box-sizing: border-box;
+  text-transform: uppercase;
+  position : absolute;
+  top: 50%;
+  left: 0%;
+  width: 100%;
+  padding: 60px 120px 0 120px;
+  text-align: center;
+  font-size: 14px;
+}

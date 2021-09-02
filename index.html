@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#FFFFFF" />
+    <meta
+      name="description"
+      content="DefiChain Avatarizer"
+    />
+    <link rel="apple-touch-icon" href="/logo.png" />
+    <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script defer="defer" type="application/javascript" src="./scripts.js"></script>
+    <title>DefiChain Avatarizer</title>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root">
+
+        <header>
+            <div id="brand-logo">
+                <svg height="72" viewBox="0 0 156 72" width="156" xmlns="http://www.w3.org/2000/svg"><g fill="currentcolor" fill-rule="evenodd"><path d="m43.9804 62.836V9.164c11.554 3.452 20 14.176 20 26.836s-8.446 23.386-20 26.836m-8-62.836v30.342l-4.57-4.57-.584-11.406 4.766-14.346c-3.056.032-6.008.468-8.834 1.218l-2.306 6.934-6.536-3.278c-2.586 1.506-4.978 3.308-7.104 5.39l12.106 6.066.354 6.942-6.94-.356-6.068-12.104c-2.08 2.126-3.884 4.516-5.39 7.104l3.28 6.538-6.938 2.304c-.748 2.826-1.184 5.778-1.216 8.834l14.348-4.766 11.406.582 4.57 4.572-4.57 4.572-11.406.582-14.348-4.766c.032 3.056.468 6.008 1.216 8.834l6.938 2.304-3.28 6.538c1.506 2.588 3.31 4.978 5.39 7.104l6.068-12.104 6.94-.356-.354 6.94-12.106 6.068c2.126 2.08 4.518 3.882 7.104 5.39l6.536-3.278 2.306 6.934c2.826.748 5.778 1.186 8.834 1.218l-4.766-14.346.584-11.406 4.57-4.57V72c19.882.0 36-16.118 36-36s-16.118-36-36-36"></path><path d="m148 66h8V6h-8z"></path><path d="m114 66.0002h8v-26h14v-8h-14v-18h18v-8h-26z"></path><path d="m80 66.0002h26V58H88V40.0002h14v-8H88v-18h18v-8H80z"></path></g></svg>
+            </div>
+            <div id="steps">
+                <div class="step step-1 current">1. <span>UPLOAD</span></div>
+                <div class="step step-1-2"></div>
+                <div class="step step-2">2. <span>STYLE</span></div>
+                <div class="step step-2-3"></div>
+                <div class="step step-3">3. <span>SHARE</span></div>
+            </div>
+        </header>
+
+        <div id="steps-container">
+            <div id="step1">
+                <div id="upload-zone">
+                    <svg id="upload-zone-ring" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 500 500">
+                        <title>UPLOAD</title>
+                        <defs>
+                            <path d="M243.2, 382.4c-74.8,   
+                            0-135.5-60.7-135.5-135.5s60.7-135.5,135.5-135.5s135.5, 60.7, 135.5,
+                            135.5 S318, 382.4, 243.2, 382.4z" id="textcircle" transform="rotate(90 250 250)"/>
+                        </defs> 
+                        <text dy="-50" textLength="4000"">
+                            <textPath xlink:href="#textcircle" startOffset="2%">
+                                Drop picture here
+                            </textPath>
+                            <textPath xlink:href="#textcircle" startOffset="52%">
+                                Drop picture here
+                            </textPath>
+                        </text>
+                    </svg>
+                    <label id="upload-plus" for="fileElem">
+                        <div class="plus"></div>
+                    </label>
+                    <div id="upload-text">
+                        <p>Drop you picture here to create your signature image</p>
+                    </div>
+                    <form class="my-form">
+                        <input type="file" id="fileElem" multiple accept="image/*" onchange="handleFiles(this.files)">
+                    </form>
+                    <div id="upload-preview" /></div>
+                </div>
+                <h1 id="step1-title">REBELS LIKE YOU <span class="outline-pink">CREATE THE FUTURE</span></h1>
+            </div>
+        </div>
+        
+    </div>
+  </body>
+</html>
