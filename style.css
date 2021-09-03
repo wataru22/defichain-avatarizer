@@ -131,6 +131,10 @@ header {
   right: -1em;
 }
 
+#root.current-step-3 #step-title-2 {
+  right: 100%;
+}
+
 #step-title-2 span:first-child {
   margin-right: 1.5em;
 }
