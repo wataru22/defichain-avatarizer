@@ -34,6 +34,7 @@ header {
 #brand-logo {
   color: #ff00af;
   max-width: 92px;
+  display: flex;
 }
 
 #brand-logo svg {
