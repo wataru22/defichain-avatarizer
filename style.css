@@ -1,4 +1,7 @@
 /*style.css*/
+* {
+  touch-action: manipulation;
+}
 
 html, body {
   font-family: 'IBM Plex Sans', sans-serif;
@@ -34,6 +37,7 @@ header {
 #brand-logo {
   color: #ff00af;
   max-width: 92px;
+  display: flex;
 }
 
 #brand-logo svg {
@@ -214,13 +218,14 @@ header {
   margin: 50px;
   box-sizing: border-box;
   position: relative;
+  z-index: 250;
 }
 
 #upload-zone-inner {
   height: 500px;
   width: 500px;
   position: relative;
-  transform: scale(1.3);
+  transform: scale(1.2);
   transition: transform ease-in-out 300ms;
   transition-delay: 200ms;
 }
@@ -437,6 +442,52 @@ header {
 
 .mobile { display: none; }
 
+#coin1, #coin2 {
+  position: absolute;
+  transition: top ease-in-out 400ms, left ease-in-out 400ms, transform ease-in-out 400ms;
+}
+
+#coin1 {
+  left: 50%;
+  top: -40px; 
+  width: 324px;
+  height: 275px;
+  margin-left: -162px;
+  z-index: 251;
+}
+
+#coin2 {
+  left: 50%;
+  top: 100px;
+  width: 310px;
+  height: 232px;
+  margin-left: -50px;
+  transition-delay: 200ms;
+  z-index: 249;
+}
+
+#root.current-step-2 #coin1 {
+  top: 50%;
+  left: -50%;
+}
+
+#root.current-step-2 #coin2 {
+  top: 45%;
+  left: 200%;
+  transform: scale(0.8);
+}
+
+#root.current-step-3 #coin1 {
+  top: 66%;
+  left: 0;
+}
+
+#root.current-step-3 #coin2 {
+  top: 45%;
+  left: 43%;
+  transform: scale(0.8);
+}
+
 @media screen and (max-width:768px) {
   .desktop { display: none; }
   .mobile { display: block; }
@@ -498,7 +549,7 @@ header {
     width: 300px;
     height: 300px;
     position: absolute;
-    bottom: 50px;
+    bottom: 150px;
     transition: bottom ease-in-out 300ms, margin-bottom ease-in-out 300ms;
     margin: 0;
   }
@@ -642,5 +693,5 @@ header {
   #share p {
     font-size: 16px;
     text-align: left;
-}
+  }
 }
