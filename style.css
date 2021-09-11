@@ -528,8 +528,8 @@ header {
   }
 
   #step-title-1 {
-    font-size: 44px;
-    width: 240px;
+    font-size: 40px;
+    width: 230px;
     line-height: 1.0;
     top: 150px;
   }
@@ -693,5 +693,29 @@ header {
   #share p {
     font-size: 16px;
     text-align: left;
+  }
+
+  #coin1 {
+    left: 15%;
+    top: 40px;
+    transform: scale(0.7);
+  }
+
+  #coin2 {
+    left: 0%;
+    top: 120px;
+    transform: scale(0.7);
+  }
+
+  #root.current-step-3 #coin1 {
+    top: 40%;
+    left: 40px;
+    transform: scale(0.5);
+  }
+
+  #root.current-step-3 #coin2 {
+    top: 35%;
+    left: 60%;
+    transform: scale(0.3);
   }
 }
