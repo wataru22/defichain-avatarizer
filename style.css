@@ -485,7 +485,7 @@ header {
 }
 
 #coin1 {
-  left: 50%;
+  left: 48%;
   top: -100px; 
   width: 324px;
   height: 275px;
@@ -494,7 +494,7 @@ header {
 }
 
 #coin2 {
-  left: 50%;
+  left: 48%;
   top: 20px;
   width: 310px;
   height: 232px;
@@ -585,6 +585,12 @@ header {
 #root.current-step-2 #avatar-5 {
   top: 120%;
   left: -35%;
+}
+
+@media screen and (min-width:769px) {
+  #upload-zone {
+    top: 50px;
+  }
 }
 
 @media screen and (min-width: 768px) and (max-height: 800px) {
