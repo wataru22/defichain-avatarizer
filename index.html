@@ -20,6 +20,7 @@
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
+    <svg id="rugged-lines" width="1415" height="283" viewBox="0 0 1415 283" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient x1="44.597%" y1="28.306%" x2="11.847%" y2="28.259%" id="a"><stop stop-color="#444" offset="0%"/><stop stop-color="#444" stop-opacity="0" offset="100%"/></linearGradient></defs><g transform="translate(-72 1)" stroke="url(#a)" fill="none" fill-rule="evenodd"><polyline points="1486.5 145 1318.5 145 1228 132 1174.5 145 1006 121 943.5 157.5 895.5 145 814 185.5 753 170.5 696 196.5 592.5 185.5 541 145 441 185.5 354.5 196.5 238 220.5 201 170.5 114.5 185.5 0 157.5"/><polyline points="1486.5 24.5 1318.5 24.5 1228 11.5 1174.5 24.5 1006 0.5 943.5 37 895.5 24.5 814 65 753 50 696 76 592.5 65 541 24.5 441 65 354.5 76 238 100 201 50 114.5 65 0 37" opacity=".6" transform="translate(0 60)"/><polyline points="1486.5 24 1318.5 24 1228 11 1174.5 24 1006 0 943.5 36.5 895.5 24 814 64.5 753 49.5 696 75.5 592.5 64.5 541 24 441 64.5 354.5 75.5 238 99.5 201 49.5 114.5 64.5 0 36.5" opacity=".3"/><polyline points="1486.5 205.5 1318.5 205.5 1228 192.5 1174.5 205.5 1006 181.5 943.5 218 895.5 205.5 814 246 753 231 696 257 592.5 246 541 205.5 441 246 354.5 257 238 281 201 231 114.5 246 0 218"/></g></svg>
     <div id="root" class="current-step-1">
         
         <div id="header-container">
@@ -39,8 +40,35 @@
             </header>
         </div>
 
+        <div id="bg-grid-wrap">
+            <table id="bg-grid">
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+        </div>
+
         <div id="steps-container">
             <div id="common">
+                <div id="upload-zone-bg-grid">
+                    <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+                    <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+                    <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+                    <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+                    <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+                    <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+                    <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+                    <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+                </div>
                 <div id="upload-zone">
                     <div id="upload-zone-inner">
                         <svg id="upload-zone-ring" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 500 500">
@@ -77,6 +105,13 @@
                     <button id="select-btn">Select</button>
                 </div>
                 <h1 id="step-title-1" class="step-title">REBELS LIKE YOU <span class="outline-pink">CREATE THE FUTURE</span></h1>
+
+                <img class="avatar-el" id="avatar-1" src="assets/avatar-1.png" width="120" height="120" />
+                <img class="avatar-el" id="avatar-2" src="assets/avatar-2.png" width="120" height="120" />
+                <img class="avatar-el" id="avatar-3" src="assets/avatar-3.png" width="120" height="120" />
+                <img class="avatar-el" id="avatar-4" src="assets/avatar-4.png" width="120" height="120" />
+                <img class="avatar-el" id="avatar-5" src="assets/avatar-5.png" width="120" height="120" />
+
                 <h1 id="step-title-2" class="step-title"><span class="outline-pink">SELECT A</span><span class="outline-pink"> DESIGN</span></h1>
                 <div id="select-design">
                     <small><span id="current-design-no">1</span>/<span id="design-count">1</span></small>
@@ -86,7 +121,21 @@
                 <h1 id="step-title-3" class="step-title"><span class="outline-pink">SHARE</span></h1>
                 <div id="share">
                     <p>Share your new profile pic and invite others to come create theirs.</p>
-                    <button id="download-btn">Download</button>
+                    <p class="share-social">
+                        <a href="">
+                            <i class="icon-social icon-facebook"></i>
+                        </a>
+                        <a href="">
+                            <i class="icon-social icon-twitter"></i>
+                        </a>
+                        <a href="">
+                            <i class="icon-social icon-whatsapp"></i>
+                        </a>
+                        <a href="">
+                            <i class="icon-social icon-telegram"></i>
+                        </a>
+                    </p>
+                    <button id="download-btn">Download<i class="icon-download"></i></button>
                 </div>
                 <img id="coin2" src="assets/coin2.png" width="310" height="232" />
                 <img id="coin1" src="assets/coin1.png" width="324" height="275" />
