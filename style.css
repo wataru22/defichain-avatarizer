@@ -284,7 +284,7 @@ header {
   background-color: transparent;
 }
 
-#upload-zone *:hover {
+#root.current-step-1 #upload-zone *:hover {
   cursor: pointer;
 }
 
@@ -385,7 +385,6 @@ header {
   left: 50%;
   margin-top: -100px;
   margin-left: -100px;
-  z-index: 101;
   transition: transform ease-in-out 300ms;
 }
 
@@ -431,12 +430,16 @@ header {
 }
 
 #upload-zone-clickarea {
-  display: block;
+  display: none;
   height: 100%;
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
+}
+
+#root.current-step-1 #upload-zone-clickarea {
+  display: block;
 }
 
 #download-btn,
