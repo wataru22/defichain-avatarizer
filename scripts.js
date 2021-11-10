@@ -4,6 +4,22 @@ let root = document.getElementById("root")
 let body = document.querySelector("body")
 let picLoaded = false
 
+// check hover
+const isHover = e => e.parentElement.querySelector(':hover') === e
+document.addEventListener('mousemove', function checkHover() {
+  const hovered = isHover(dropArea)
+  if (hovered !== checkHover.hovered) {
+    // console.log(hovered ? 'hovered' : 'not hovered');
+    if (hovered) {
+      dropArea.classList.add('hovered')
+    }
+    else {
+      dropArea.classList.remove('hovered')
+    }
+    checkHover.hovered = hovered;
+  }
+})
+
 // Prevent default drag behaviors
 ;['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
   dropArea.addEventListener(eventName, preventDefaults, false)   

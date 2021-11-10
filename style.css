@@ -281,6 +281,11 @@ header {
   box-sizing: border-box;
   position: relative;
   z-index: 250;
+  background-color: transparent;
+}
+
+#upload-zone *:hover {
+  cursor: pointer;
 }
 
 #upload-zone-bg-grid {
@@ -346,6 +351,14 @@ header {
 @-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
 @keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
 
+#upload-zone-ring {
+  transition: transform ease-in-out 300ms
+}
+
+#upload-zone.hovered #upload-zone-ring {
+  transform: rotate(8deg);
+}
+
 #upload-zone-ring text {
   font-size: 51px;
   font-weight: 700;
@@ -373,6 +386,11 @@ header {
   margin-top: -100px;
   margin-left: -100px;
   z-index: 101;
+  transition: transform ease-in-out 300ms;
+}
+
+.hovered #upload-plus {
+  transform: scale(0.8);
 }
 
 .plus {
@@ -410,6 +428,15 @@ header {
   pointer-events: none;
   border-radius: 250px;
   overflow: hidden;
+}
+
+#upload-zone-clickarea {
+  display: block;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
 }
 
 #download-btn,

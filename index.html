@@ -69,7 +69,7 @@
                     <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
                     <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
                 </div>
-                <div id="upload-zone">
+                <div id="upload-zone" for=fileElem>
                     <div id="upload-zone-inner">
                         <svg id="upload-zone-ring" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 500 500">
                             <title>UPLOAD</title>
@@ -87,7 +87,7 @@
                                 <textPath class="mobile" xlink:href="#textcircle" startOffset="52%">Tap + to select picture.</textPath>
                             </text>
                         </svg>
-                        <label id="upload-plus" for="fileElem">
+                        <label id="upload-plus">
                             <div class="plus"></div>
                         </label>
                         <div id="upload-text">
@@ -99,6 +99,7 @@
                         <div id="canvas-container">
                             <canvas id="canvas" width="500" height="500"></canvas>
                         </div>
+                        <label id="upload-zone-clickarea" for="fileElem"></label>
                     </div>
                     <button id="select-next-btn" class="select-chevron"></button>
                     <button id="select-prev-btn" class="select-chevron"></button>
