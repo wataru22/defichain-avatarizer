@@ -60,7 +60,18 @@ function handleDrop(e) {
 
 function handleFiles(files) {
   files = [...files]
-  loadCanvas(files[0])
+
+  var acceptedTypes = [
+    'image/png',
+    'image/gif', 
+    'image/jpeg',
+  ]
+  if ( files[0] && acceptedTypes.includes(files[0].type) ) {
+    loadCanvas(files[0])
+  }
+  else {
+    alert('File format not supported. Please choose a JPG, PNG or GIF file.')
+  }
 //   files.forEach(previewFile)
 }
 
