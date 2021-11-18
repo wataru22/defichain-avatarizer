@@ -20,6 +20,7 @@
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
+    <svg id="rugged-lines" width="1415" height="283" viewBox="0 0 1415 283" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient x1="44.597%" y1="28.306%" x2="11.847%" y2="28.259%" id="a"><stop stop-color="#444" offset="0%"/><stop stop-color="#444" stop-opacity="0" offset="100%"/></linearGradient></defs><g transform="translate(-72 1)" stroke="url(#a)" fill="none" fill-rule="evenodd"><polyline points="1486.5 145 1318.5 145 1228 132 1174.5 145 1006 121 943.5 157.5 895.5 145 814 185.5 753 170.5 696 196.5 592.5 185.5 541 145 441 185.5 354.5 196.5 238 220.5 201 170.5 114.5 185.5 0 157.5"/><polyline points="1486.5 24.5 1318.5 24.5 1228 11.5 1174.5 24.5 1006 0.5 943.5 37 895.5 24.5 814 65 753 50 696 76 592.5 65 541 24.5 441 65 354.5 76 238 100 201 50 114.5 65 0 37" opacity=".6" transform="translate(0 60)"/><polyline points="1486.5 24 1318.5 24 1228 11 1174.5 24 1006 0 943.5 36.5 895.5 24 814 64.5 753 49.5 696 75.5 592.5 64.5 541 24 441 64.5 354.5 75.5 238 99.5 201 49.5 114.5 64.5 0 36.5" opacity=".3"/><polyline points="1486.5 205.5 1318.5 205.5 1228 192.5 1174.5 205.5 1006 181.5 943.5 218 895.5 205.5 814 246 753 231 696 257 592.5 246 541 205.5 441 246 354.5 257 238 281 201 231 114.5 246 0 218"/></g></svg>
     <div id="root" class="current-step-1">
         
         <div id="header-container">
@@ -39,24 +40,36 @@
             </header>
         </div>
 
-        <table id="bg-grid">
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-        </table>
+        <div id="bg-grid-wrap">
+            <table id="bg-grid">
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+        </div>
 
         <div id="steps-container">
             <div id="common">
-                <div id="upload-zone">
+                <div id="upload-zone-bg-grid">
+                    <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+                    <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+                    <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+                    <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+                    <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+                    <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+                    <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+                    <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+                </div>
+                <div id="upload-zone" for=fileElem>
                     <div id="upload-zone-inner">
                         <svg id="upload-zone-ring" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 500 500">
                             <title>UPLOAD</title>
@@ -74,18 +87,19 @@
                                 <textPath class="mobile" xlink:href="#textcircle" startOffset="52%">Tap + to select picture.</textPath>
                             </text>
                         </svg>
-                        <label id="upload-plus" for="fileElem">
+                        <label id="upload-plus">
                             <div class="plus"></div>
                         </label>
                         <div id="upload-text">
-                            <p>Drop you picture here to create your signature image</p>
+                            <p>Drop your picture here to create your signature image</p>
                         </div>
                         <form class="my-form">
-                            <input type="file" id="fileElem" multiple accept="image/*" onchange="handleFiles(this.files)">
+                            <input type="file" id="fileElem" multiple accept="image/png, image/gif, image/jpeg" onchange="handleFiles(this.files)">
                         </form>
                         <div id="canvas-container">
                             <canvas id="canvas" width="500" height="500"></canvas>
                         </div>
+                        <label id="upload-zone-clickarea" for="fileElem"></label>
                     </div>
                     <button id="select-next-btn" class="select-chevron"></button>
                     <button id="select-prev-btn" class="select-chevron"></button>
@@ -107,13 +121,32 @@
                 </div>
                 <h1 id="step-title-3" class="step-title"><span class="outline-pink">SHARE</span></h1>
                 <div id="share">
+                    <button id="download-btn">Download<i class="icon-download"></i></button>
                     <p>Share your new profile pic and invite others to come create theirs.</p>
-                    <button id="download-btn">Download</button>
+                    <p class="share-social">
+                        <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://defichain-avatar.me/">
+                            <i class="icon-social icon-facebook"></i>
+                        </a>
+                        <a target="_blank" href="https://twitter.com/share?text=Hey check out my new DefiChain avatar! Make yours at&url=https://defichain-avatar.me/" class="twitter-share-button" data-text="" data-url="" data-hashtags="DFI" data-show-count="false">
+                            <i class="icon-social icon-twitter"></i>
+                        </a>
+                        <a target="_blank" href="https://wa.me/?text=Hey check out my new DefiChain avatar! Make yours at https://defichain-avatar.me/">
+                            <i class="icon-social icon-whatsapp"></i>
+                        </a>
+                        <a target="_blank" href="https://telegram.me/share/url?text=Hey check out my new DefiChain avatar! Make yours here&url=https://defichain-avatar.me/">
+                            <i class="icon-social icon-telegram"></i>
+                        </a>
+                    </p>
                 </div>
                 <img id="coin2" src="assets/coin2.png" width="310" height="232" />
                 <img id="coin1" src="assets/coin1.png" width="324" height="275" />
             </div>
         </div>
     </div>
+    <footer>
+        <p>
+            <a href="https://defichain.com">Go to defichain.com</a>
+        </p>
+    </footer>
   </body>
 </html>
