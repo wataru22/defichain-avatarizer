@@ -25,6 +25,12 @@ html {
   height: 100%;
 }
 
+button:hover {
+  cursor: pointer;
+}
+
+
+.svg-overlays {display: none;}
 
 #root {
   margin: 0 auto;
@@ -258,7 +264,7 @@ header {
 #share {
   position: absolute;
   left: 110%;
-  top: 40%;
+  top: 45%;
   text-transform: uppercase;
   transition: left ease-in-out 300ms;
   transition-delay: 500ms;
@@ -281,6 +287,11 @@ header {
   box-sizing: border-box;
   position: relative;
   z-index: 250;
+  background-color: transparent;
+}
+
+#root.current-step-1 #upload-zone *:hover {
+  cursor: pointer;
 }
 
 #upload-zone-bg-grid {
@@ -322,7 +333,7 @@ header {
   height: 500px;
   width: 500px;
   position: relative;
-  transform: scale(1.2);
+  transform: scale(1.1);
   transition: transform ease-in-out 300ms;
   transition-delay: 200ms;
 }
@@ -345,6 +356,14 @@ header {
 @-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
 @-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
 @keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+
+#upload-zone-ring {
+  transition: transform ease-in-out 300ms
+}
+
+#upload-zone.hovered #upload-zone-ring {
+  transform: rotate(8deg);
+}
 
 #upload-zone-ring text {
   font-size: 51px;
@@ -372,7 +391,11 @@ header {
   left: 50%;
   margin-top: -100px;
   margin-left: -100px;
-  z-index: 101;
+  transition: transform ease-in-out 300ms;
+}
+
+.hovered #upload-plus {
+  transform: scale(0.8);
 }
 
 .plus {
@@ -410,6 +433,19 @@ header {
   pointer-events: none;
   border-radius: 250px;
   overflow: hidden;
+}
+
+#upload-zone-clickarea {
+  display: none;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+#root.current-step-1 #upload-zone-clickarea {
+  display: block;
 }
 
 #download-btn,
@@ -477,6 +513,7 @@ header {
   display: none;
   margin-top: 20px;
   z-index: 200;
+  padding: 0 6px;
 }
 
 #root.current-step-2 #back-btn-1 {
@@ -505,14 +542,19 @@ header {
 .select-chevron {
   background: transparent;
   border: 0;
-  display: none;
   position: absolute;
 	top: 50%;
   margin-top: -32px;
+  transition: opacity ease-in-out 300ms, right ease-in-out 300ms, left ease-in-out 300ms;
+  transition-delay: 0ms;
+  opacity: 0;
+  display: block;
+  pointer-events: none;
 }
 
 #root.current-step-2 .select-chevron {
-  display: block;
+  opacity: 1;
+  pointer-events: initial;
 }
 
 #select-next-btn.select-chevron {
@@ -524,6 +566,7 @@ header {
 }
 
 .select-chevron::before {
+  border-color: #000;
 	border-style: solid;
 	border-width: 4px 4px 0 0;
 	content: '';
@@ -642,15 +685,39 @@ header {
 
 #root.current-step-3 #avatar-4,
 #root.current-step-2 #avatar-4 {
-  top: 195%;
+  top: 95%;
   left: 155%;
 }
 
 #root.current-step-3 #avatar-5,
 #root.current-step-2 #avatar-5 {
-  top: 120%;
+  top: 90%;
   left: -35%;
 }
+
+footer {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 3em 1em;
+}
+
+footer p {
+  text-align: center;
+}
+
+footer a:hover, footer a:active {
+  color: #000;
+}
+footer a, footer a:visited {
+  color: rgba(0,0,0,.6);
+}
+footer a {
+  text-decoration: none;
+}
+
 
 @media screen and (min-width:769px) {
   #root {
@@ -675,7 +742,14 @@ header {
 @media screen and (max-width:768px) {
 
   html, body {
-    min-height: 700px;
+    min-height: 680px;
+  }
+
+  html {
+    overflow: hidden;
+  }
+
+  body {
     overflow-x: hidden;
   }
 
@@ -688,7 +762,11 @@ header {
 
   header {
     border-bottom-width: 3px;
-    height: 80px;
+    height: 70px;
+  }
+
+  #brand-logo {
+    max-width: 72px;
   }
 
   #steps .step > span {
@@ -758,7 +836,7 @@ header {
   }
 
   #root.current-step-1 #upload-zone {
-    top: 50%;
+    top: 48%;
   }
 
   #upload-zone-inner {
@@ -794,6 +872,19 @@ header {
     background-size: 50% 4px,4px 50%; /*thickness = 2px, length = 50% (25px)*/
   }
 
+  #upload-zone-bg-grid {
+    max-width: 300px;
+    max-height: 300px;
+    margin-left: -150px;
+    left: 90%;
+    top: 80px;
+  }
+
+  #root.current-step-2 #upload-zone-bg-grid {
+    top: 171px;
+    left: 50%;
+  }
+  
   #canvas-container {
     transform: scale(0.55);
     margin-top: -100px;
@@ -802,10 +893,10 @@ header {
 
   #step-title-3,
   #step-title-2 {
-    font-size: 40px;
+    font-size: 36px;
     width: 100%;
     text-align: left;
-    top: 130px;
+    top: 124px;
     padding: 0 0 0 16px;
     box-sizing: border-box;
   }
@@ -819,14 +910,17 @@ header {
   }
 
   #root.current-step-2 #upload-zone {
-    /* bottom: 50%; */
-    top: 28%;
+    top: 171px;
     margin-bottom: -160px;
   }
 
   #root.current-step-3 #upload-zone {
-    bottom: 50%;
+    top: 171px;
     margin-bottom: -130px;
+  }
+
+  #root.current-step-3 #upload-zone-inner {
+    transform: scale(1.1);
   }
 
   .back-btn {
@@ -835,7 +929,7 @@ header {
 
   #download-btn,
   #select-btn {
-    width: 120px;
+    width: 150px;
     height: 48px;
     line-height: 48px;
     font-size: 16px;
@@ -870,7 +964,7 @@ header {
   }
 
   #select-design p {
-    font-size: 18px;
+    font-size: 16px;
   }
 
   .select-chevron::before {
@@ -980,7 +1074,7 @@ header {
   display: block;
   height: 40px;
   width: 40px;
-  margin: 16px 0;
+  margin: 0px 0;
 }
 
 .icon-facebook {
