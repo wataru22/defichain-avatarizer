@@ -202,7 +202,7 @@ header {
 
 #step-title-2 {
   top: 150px;
-  right: -20em;
+  right: -7.5em;
   width: 700px;
 }
 
@@ -247,6 +247,10 @@ header {
   font-size: 20px;
 }
 
+#root.current-step-1 #select-design {
+  left: 120%;
+}
+
 #root.current-step-2 #select-design {
   /* display: block; */
   left: 55%;
@@ -257,27 +261,43 @@ header {
   left: 110%;
 }
 
+#root.current-step-1 #step-title-3 {
+  left: 220%;
+}
+
+#root.current-step-2 #step-title-3 {
+  left: 110%;
+}
+
 #root.current-step-3 #step-title-3 {
   left: 55%;
 }
 
 #share {
   position: absolute;
-  left: 110%;
+  left: 160%;
   top: 45%;
   text-transform: uppercase;
   transition: left ease-in-out 300ms;
   transition-delay: 500ms;
   width: 500px;
   box-sizing: border-box;
+  pointer-events: none;
+  opacity: 0.5;
 }
 
 #share p {
   font-size: 20px;
 }
 
+#root.current-step-2 #share {
+  left: 110%;
+}
+
 #root.current-step-3 #share {
   left: 60%;
+  pointer-events: inherit;
+  opacity: 1;
 }
 
 #upload-zone {
@@ -899,6 +919,10 @@ footer a {
     top: 124px;
     padding: 0 0 0 16px;
     box-sizing: border-box;
+  }
+
+  #root.current-step-1 #step-title-2 {
+    right: -10.5em;
   }
 
   #root.current-step-3 #step-title-3 {
