@@ -188,27 +188,52 @@ var svg2 = '<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmln
 
 let currentDesign = 1
 const designCount = 9
-let designTitles = [
-  'L21-15-01',
-  'L21-15-02',
-  'L21-15-03',
-  'L21-15-04',
-  'L21-15-05',
-  'L21-15-06',
-  'L21-15-07',
-  'L21-15-08',
-  'L21-15-09',
-]
-let designFileURLs = [
-  './assets/L21-15-01.svg',
-  './assets/L21-15-02.svg',
-  './assets/L21-15-03.svg',
-  './assets/L21-15-04.svg',
-  './assets/L21-15-05.svg',
-  './assets/L21-15-06.svg',
-  './assets/L21-15-07.svg',
-  './assets/L21-15-08.svg',
-  './assets/L21-15-09.svg',
+var overlayDesigns = [
+  {
+    title: 'L21-15-01',
+    url: './assets/L21-15-01.svg',
+    globalCompositeOperation: 'screen',
+  },
+  {
+    title: 'L21-15-02',
+    url: './assets/L21-15-02.svg',
+    globalCompositeOperation: 'normal',
+  },
+  {
+    title: 'L21-15-03',
+    url: './assets/L21-15-03.svg',
+    globalCompositeOperation: 'normal',
+  },
+  {
+    title: 'L21-15-04',
+    url: './assets/L21-15-04.svg',
+    globalCompositeOperation: 'screen',
+  },
+  {
+    title: 'L21-15-05',
+    url: './assets/L21-15-05.svg',
+    globalCompositeOperation: 'normal',
+  },
+  {
+    title: 'L21-15-06',
+    url: './assets/L21-15-06.svg',
+    globalCompositeOperation: 'normal',
+  },
+  {
+    title: 'L21-15-07',
+    url: './assets/L21-15-07.svg',
+    globalCompositeOperation: 'normal',
+  },
+  {
+    title: 'L21-15-08',
+    url: './assets/L21-15-08.svg',
+    globalCompositeOperation: 'normal',
+  },
+  {
+    title: 'L21-15-09',
+    url: './assets/L21-15-09.svg',
+    globalCompositeOperation: 'overlay',
+  },
 ]
 
 const designNoEl = document.getElementById("current-design-no");
@@ -216,7 +241,7 @@ designNoEl.innerHTML = currentDesign
 const designCountEl = document.getElementById("design-count");
 designCountEl.innerHTML = designCount
 const designTitleEl = document.getElementById("design-title");
-designTitleEl.innerHTML = designTitles[currentDesign-1]
+designTitleEl.innerHTML = overlayDesigns[currentDesign-1].title
 
 function selectDesign(d) {
   currentDesign = currentDesign + d
@@ -227,11 +252,11 @@ function selectDesign(d) {
   // if (design2) canvas.remove(design2);
 
   designNoEl.innerHTML = currentDesign
-  designTitleEl.innerHTML = designTitles[currentDesign-1]
+  designTitleEl.innerHTML = overlayDesigns[currentDesign-1].title
 
   if (currentDesign) {
     console.log('loading...')
-    fabric.Image.fromURL(designFileURLs[currentDesign-1], function (img) {
+    fabric.Image.fromURL(overlayDesigns[currentDesign-1].url, function (img) {
       console.log('loaded')
       design = img.set({
         left: 0,
@@ -242,7 +267,7 @@ function selectDesign(d) {
       } else {
         design.scaleToWidth(500);
       }
-      design.globalCompositeOperation = 'screen';
+      design.globalCompositeOperation = overlayDesigns[currentDesign-1].globalCompositeOperation;
       canvas.add(design);
     });
   }
