@@ -158,6 +158,7 @@ document.getElementById('select-btn').addEventListener("click", function (e) {
 
 document.getElementById('back-btn-1').addEventListener("click", function (e) {
   picLoaded = false
+  dropArea.classList.remove('loaded')
   stepChange(1)
 });
 
