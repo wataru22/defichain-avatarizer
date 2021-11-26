@@ -48,7 +48,15 @@ function highlight(e) {
 }
 
 function unhighlight(e) {
-  dropArea.classList.remove('active')
+  dropArea.classList.remove('highlight')
+}
+
+function startLoading(e) {
+  dropArea.classList.add('loading')
+}
+
+function stopLoading(e) {
+  dropArea.classList.remove('loading')
 }
 
 function handleDrop(e) {
@@ -255,9 +263,9 @@ function selectDesign(d) {
   designTitleEl.innerHTML = overlayDesigns[currentDesign-1].title
 
   if (currentDesign) {
-    console.log('loading...')
+    startLoading()
     fabric.Image.fromURL(overlayDesigns[currentDesign-1].url, function (img) {
-      console.log('loaded')
+      stopLoading()
       design = img.set({
         left: 0,
         top: 0
