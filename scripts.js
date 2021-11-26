@@ -89,8 +89,6 @@ var dataURL
 var currentStep = 1
 var canvas = new fabric.StaticCanvas('canvas')
 let design = null
-let design2 = null
-let design3 = null
 
 function stepChange(step) {
   root.classList.remove('current-step-1')
@@ -257,8 +255,7 @@ function selectDesign(d) {
   if (currentDesign === 0) currentDesign = designCount
   else if (currentDesign > designCount) currentDesign = 1
 
-  if (design) canvas.remove(design);
-  // if (design2) canvas.remove(design2);
+  if (design) canvas.remove(design)
 
   designNoEl.innerHTML = currentDesign
   designTitleEl.innerHTML = overlayDesigns[currentDesign-1].title
@@ -266,7 +263,7 @@ function selectDesign(d) {
   if (currentDesign) {
     startLoading()
     fabric.Image.fromURL(overlayDesigns[currentDesign-1].url, function (img) {
-      stopLoading()
+      if (design) canvas.remove(design)
       design = img.set({
         left: 0,
         top: 0
@@ -278,6 +275,8 @@ function selectDesign(d) {
       }
       design.globalCompositeOperation = overlayDesigns[currentDesign-1].globalCompositeOperation;
       canvas.add(design);
+      
+      stopLoading()
     });
   }
 }
