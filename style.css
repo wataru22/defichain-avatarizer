@@ -358,18 +358,14 @@ header {
   transition-delay: 200ms;
 }
 
-#root.current-step-2 #upload-zone {
-  /* border: 1px solid rgba(0,0,0,0.1); */
-}
-
 #root.current-step-2 #upload-zone-inner {
   transform: scale(0.8);
 }
 
 #upload-zone #upload-zone-ring {
   overflow: visible;
-  height: 100%;
-  width: 100%;
+  height: 500px;
+  width: 500px;
 }
 
 @-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
@@ -377,7 +373,7 @@ header {
 @keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
 
 #upload-zone-ring {
-  transition: transform ease-in-out 300ms
+  transition: transform ease-in-out 300ms;
 }
 
 #upload-zone.hovered #upload-zone-ring {
@@ -391,11 +387,11 @@ header {
   letter-spacing: -8px;
   fill: #ff00af;
   transition: fill ease-in-out 300ms;
-  transition-delay: 200ms;
 }
 
 #upload-zone.highlight #upload-zone-ring text {
-  fill: rgba(0,0,0,0.1);
+  opacity: 0.9;
+  fill: #dddddd;
 }
 
 .current-step-3 #upload-zone-ring,
