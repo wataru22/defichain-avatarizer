@@ -862,6 +862,11 @@ footer a {
     margin: 0;
   }
 
+  #upload-zone #upload-zone-ring {
+    width: 300px;
+    height: 300px;
+  }
+
   #root.current-step-1 #upload-zone {
     top: 48%;
   }
