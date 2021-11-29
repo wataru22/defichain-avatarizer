@@ -186,7 +186,7 @@ header {
 }
 
 #step-title-1 {
-  width: 460px;
+  width: 580px;
   right: -50%;
 }
 
@@ -663,28 +663,30 @@ header {
 .avatar-el {
   position: absolute;
   transition: top ease-in-out 1000ms, left ease-in-out 1000ms;
-  margin-top: -60px;
-  margin-left: -60px;
+  margin-top: -40px;
+  margin-left: -40px;
+  height: 80px;
+  width: 80px;
 }
 
 #avatar-1 {
-  top: 65%;
-  left: 50%;
+  top: 55%;
+  left: 48%;
 }
 
 #avatar-2 {
-  top: 75%;
-  left: 60%;
+  top: 69%;
+  left: 55%;
 }
 
 #avatar-3 {
-  top: 85%;
-  left: 45%;
+  top: 82%;
+  left: 46%;
 }
 
 #avatar-4 {
-  top: 95%;
-  left: 55%;
+  top: 97%;
+  left: 51%;
 }
 
 #avatar-5 {
@@ -1080,21 +1082,21 @@ footer a {
   
   #avatar-2 {
     top: 55%;
-    left: 98%;
+    left: 95%;
   }
   
   #avatar-3 {
-    top: 55%;
+    top: 59%;
     left: 0%;
   }
   
   #avatar-4 {
     top: 85%;
-    left: 85%;
+    left: 88%;
   }
   
   #avatar-5 {
-    top: 97%;
+    top: 93%;
     left: 35%;
   }
 }
